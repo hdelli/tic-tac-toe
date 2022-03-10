@@ -28,22 +28,14 @@
     margin: 0;
 }
 
-
-
-
-
-
 header {
     text-align: center;
     margin: 2em;
 }
 
-
-
 #game {
     text-align: center;
 }
-
 
 /* GAME CSS - including grid and turn display */
 
@@ -80,7 +72,6 @@ aside, .draw::after {
 }
 
 aside, .p1win::after {
-    /* @var1: var(--p1-name); */
     content: var(--p1-name) " wins!";
     color: var(--p1-color);
     font-size: var(--mark-size);
