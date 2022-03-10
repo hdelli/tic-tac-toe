@@ -3,8 +3,14 @@ const grid = document.querySelector("#grid");
 let noWinner = true;
 
 const winningArrays = [
-    [1,2,3],
-    [1,5,9],
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [6,4,2]
 ];
 
 const changeDisplay = (player) => {
@@ -13,8 +19,26 @@ const changeDisplay = (player) => {
     display.classList.add(player);
 }
 
-const checkWin = (player) => {
-    
+const checkWin = () => {
+    const squares = grid.children;
+    const playerSquareArray = [];
+    for (const square of squares) {
+        playerSquareArray.push(square.className)
+    }
+
+    for (winningArray of winningArrays) {
+        const position1 = playerSquareArray[winningArray[0]];
+        const position2 = playerSquareArray[winningArray[1]];
+        const position3 = playerSquareArray[winningArray[2]];
+        if (position1==position2 && position1==position3 && position1!=""){
+            return true;
+        }
+    }
+    return false;
+
+    // go through each of the winning arrays
+    // check if those particular positions in the playerSquareArray are all equal to eachother
+
 }
 
 const isFull = () => {
@@ -39,7 +63,7 @@ const squareClick = (event) => {
         // add mark depending on player
         square.classList.add(currentPlayer);
         //check current player win
-        if (checkWin(currentPlayer)) {
+        if (checkWin()) {
             //do winnning stuff
             noWinner = false;
             changeDisplay(`${currentPlayer}win`);
