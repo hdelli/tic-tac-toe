@@ -8,6 +8,7 @@
     --square-color: #cccccc;
     --p1-color: royalblue;
     --p2-color: lightcoral;
+    --other-color: black;
 
     /* calculated values */
     --grid-size: calc((var(--square-size) + var(--spacing)) * 3);
@@ -62,6 +63,24 @@ aside, .p1::after {
 
 aside, .p2::after {
     content: "Player 2";
+    color: var(--p2-color);
+    font-size: var(--mark-size);
+}
+
+aside, .draw::after {
+    content: "Draw!";
+    color: var(--other-color);
+    font-size: var(--mark-size);
+}
+
+aside, .p1win::after {
+    content: "P1 wins";
+    color: var(--p1-color);
+    font-size: var(--mark-size);
+}
+
+aside, .p2win::after {
+    content: "P2 wins";
     color: var(--p2-color);
     font-size: var(--mark-size);
 }
