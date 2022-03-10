@@ -86,7 +86,6 @@ const squareClick = (event) => {
 }
 
 // init grid squares
-
 const init = () => {
     //purge existing grid
     while (grid.firstChild) {
@@ -97,11 +96,11 @@ const init = () => {
     for (let i = 1; i < 10; i++) {
         const square = document.createElement("div");
         square.setAttribute("id",`s${i}`);
-        // square.classList.add("p2")
         square.addEventListener("click", squareClick);
         grid.appendChild(square);
     }
 
+    //reset values
     currentPlayer = "p1";
     changeDisplay(currentPlayer);
     noWinner = true;

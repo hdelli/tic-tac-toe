@@ -11,7 +11,7 @@
     --other-color: black;
     --p1-name: "Player 1";
     --p2-name: "Player 2";
-
+    
     /* calculated values */
     --grid-size: calc((var(--square-size) + var(--spacing)) * 3);
     --display-size: calc(var(--square-size) * 3);
