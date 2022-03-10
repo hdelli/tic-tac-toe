@@ -3,10 +3,43 @@ const grid = document.querySelector("#grid");
 const p1score = document.querySelector("#p1--score");
 const p2score = document.querySelector("#p2--score");
 
+const p1_name = document.getElementById("p1--name");
+const p2_name = document.getElementById("p2--name");
+const edit_p1_button = document.getElementById("edit-p1-button");
+const edit_p2_button = document.getElementById("edit-p2-button");
+
 let p1wins = 0;
 let p2wins = 0;
 let currentPlayer = "p1";
 let noWinner = true;
+
+
+edit_p1_button.addEventListener("click", editOrSaveP1);
+function editOrSaveP1(){
+    if (edit_p1_button.innerText === "Edit Name"){
+        p1_name.contentEditable = true;
+        edit_p1_button.innerText = "Save";
+        p1_name.style.backgroundColor = "#333333";
+    } else {
+        p1_name.contentEditable = false;
+        edit_p1_button.innerText = "Edit Name";
+        p1_name.style.backgroundColor = "black";
+    }
+}
+
+edit_p2_button.addEventListener("click", editOrSaveP2);
+function editOrSaveP2(){
+    if (edit_p2_button.innerText === "Edit Name"){
+        p2_name.contentEditable = true;
+        edit_p2_button.innerText = "Save";
+        p1_name.style.backgroundColor = "#333333";
+    } else {
+        p2_name.contentEditable = false;
+        edit_p2_button.innerText = "Edit Name";
+        p2_name.style.backgroundColor = "black";
+    }
+}
+
 
 const winningArrays = [
     [0,1,2],
