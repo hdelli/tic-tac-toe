@@ -71,6 +71,18 @@ const checkWin = () => {
         const position2 = playerSquareArray[winningArray[1]];
         const position3 = playerSquareArray[winningArray[2]];
         if (position1==position2 && position1==position3 && position1!=""){
+            for (const square of squares) {
+                if (square.getAttribute("id") == winningArray[0]){
+                    square.style.backgroundColor = "grey";
+                }
+                if (square.getAttribute("id") == winningArray[1]){
+                    square.style.backgroundColor = "grey";
+                }
+                if (square.getAttribute("id") == winningArray[2]){
+                    square.style.backgroundColor = "grey";
+                }
+            }
+            // get squares in those positions and change background colour
             return true;
         }
     }
@@ -143,9 +155,9 @@ const init = () => {
     }
 
     //init fresh grid
-    for (let i = 1; i < 10; i++) {
+    for (let i = 0; i < 9; i++) {
         const square = document.createElement("div");
-        square.setAttribute("id",`s${i}`);
+        square.setAttribute("id",i);
         square.addEventListener("click", squareClick);
         grid.appendChild(square);
     }
