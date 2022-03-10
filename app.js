@@ -21,6 +21,7 @@ function editOrSaveP1(){
         edit_p1_button.innerText = "Save";
         p1_name.style.backgroundColor = "#333333";
     } else {
+        // root.style.setProperty("--p1-name", p1_name.innerText); 
         p1_name.contentEditable = false;
         edit_p1_button.innerText = "Edit Name";
         p1_name.style.backgroundColor = "black";
@@ -32,7 +33,7 @@ function editOrSaveP2(){
     if (edit_p2_button.innerText === "Edit Name"){
         p2_name.contentEditable = true;
         edit_p2_button.innerText = "Save";
-        p1_name.style.backgroundColor = "#333333";
+        p2_name.style.backgroundColor = "#333333";
     } else {
         p2_name.contentEditable = false;
         edit_p2_button.innerText = "Edit Name";
