@@ -9,6 +9,8 @@
     --p1-color: royalblue;
     --p2-color: lightcoral;
     --other-color: black;
+    --p1-name: "Player 1";
+    --p2-name: "Player 2";
 
     /* calculated values */
     --grid-size: calc((var(--square-size) + var(--spacing)) * 3);
@@ -38,17 +40,21 @@ header {
 
 
 
-
+#game {
+    text-align: center;
+}
 
 
 /* GAME CSS - including grid and turn display */
 
 #turn-display {
     /* from vars */
+    display: inline-block;
     height: var(--square-size);
-    width: var(--display-size);
+    min-width: var(--display-size);
     border-radius: var(--square-rad);
     margin: var(--spacing) auto;
+    padding: 0 var(--spacing);
     
     /* styling */
     text-align: center;
@@ -56,13 +62,13 @@ header {
 }
 
 aside, .p1::after {
-    content: "Player 1";
+    content: var(--p1-name);
     color: var(--p1-color);
     font-size: var(--mark-size);
 }
 
 aside, .p2::after {
-    content: "Player 2";
+    content: var(--p2-name);
     color: var(--p2-color);
     font-size: var(--mark-size);
 }
@@ -74,13 +80,14 @@ aside, .draw::after {
 }
 
 aside, .p1win::after {
-    content: "P1 wins";
+    /* @var1: var(--p1-name); */
+    content: var(--p1-name) " wins!";
     color: var(--p1-color);
     font-size: var(--mark-size);
 }
 
 aside, .p2win::after {
-    content: "P2 wins";
+    content: var(--p2-name) " wins!";
     color: var(--p2-color);
     font-size: var(--mark-size);
 }
@@ -114,8 +121,9 @@ aside, .p2win::after {
     background-color: var(--square-color);
 }
 
-div .p1::after {
+#grid .p1::after {
     /* from vars */
+    display: block;
     height: var(--mark-size);
     width: var(--mark-size);
     margin: var(--mark-margin);
@@ -126,14 +134,14 @@ div .p1::after {
     /* symbol */
     content: "\26AC";
     font-size: var(--mark-size);
-    
 
     /* style */
     color: var(--p1-color);
 }
 
-div .p2::after {
+#grid .p2::after {
     /* from vars */
+    display: block;
     height: var(--mark-size);
     width: var(--mark-size);
     margin: var(--mark-margin);
