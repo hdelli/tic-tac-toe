@@ -1,0 +1,131 @@
+:root{
+    /* user values */
+    --square-size: 100px;
+    --square-rad: 8px;
+    --mark-size: 80px;
+    --spacing: 10px;
+
+    --square-color: #cccccc;
+    --p1-color: royalblue;
+    --p2-color: lightcoral;
+
+    /* calculated values */
+    --grid-size: calc((var(--square-size) + var(--spacing)) * 3);
+    --display-size: calc((var(--square-size) * 3) + (var(--spacing) * 2));
+    --mark-margin: calc((var(--square-size) - var(--mark-size)) / 2);
+    --grid-rad: calc(var(--spacing) + var(--square-rad));
+
+   /* symbol offsets */
+    --off1: -12px;
+    --off2: 6px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+
+header {
+    text-align: center;
+    margin: 2em;
+}
+
+
+
+
+
+
+/* GAME CSS - including grid and turn display */
+
+#turn-display {
+    /* from vars */
+    height: var(--square-size);
+    width: var(--display-size);
+    border-radius: var(--square-rad);
+    margin: var(--spacing) auto;
+    
+    /* styling */
+    text-align: center;
+    background-color: var(--square-color);
+}
+
+aside, .p1::after {
+    content: "Player 1";
+    color: var(--p1-color);
+    font-size: var(--mark-size);
+}
+
+aside, .p2::after {
+    content: "Player 2";
+    color: var(--p2-color);
+    font-size: var(--mark-size);
+}
+
+#grid {
+    /* standard grid params from vars */
+    margin: 0 auto;
+    height: var(--grid-size);
+    width: var(--grid-size);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding: calc(var(--spacing) / 2);
+    border-radius: var(--grid-rad);
+
+    /* styling */
+    border: 5px solid black;
+}
+
+/* squares in the grid */
+#grid div {
+    /* from vars */
+    height: var(--square-size);
+    width: var(--square-size);
+    border-radius: var(--square-rad);
+    position: relative;
+    
+    /* styling */
+    background-color: var(--square-color);
+}
+
+div .p1::after {
+    /* from vars */
+    height: var(--mark-size);
+    width: var(--mark-size);
+    margin: var(--mark-margin);
+    position: absolute;
+    text-align: center;
+    line-height: calc(var(--mark-size) + var(--off1));
+
+    /* symbol */
+    content: "\26AC";
+    font-size: var(--mark-size);
+    
+
+    /* style */
+    color: var(--p1-color);
+}
+
+div .p2::after {
+    /* from vars */
+    height: var(--mark-size);
+    width: var(--mark-size);
+    margin: var(--mark-margin);
+    position: absolute;
+    text-align: center;
+    line-height: calc(var(--mark-size) + var(--off2));
+    
+    /* symbol */
+    content: "\2715";
+    font-size: var(--mark-size);
+    
+    /* style */
+    color: var(--p2-color);
+}
