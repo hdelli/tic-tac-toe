@@ -1,3 +1,5 @@
+let p1wins = 0;
+let p2wins = 0;
 let currentPlayer = "p1";
 const grid = document.querySelector("#grid");
 let noWinner = true;
@@ -41,6 +43,11 @@ const checkWin = () => {
 
 }
 
+const givePoint = (player) => {
+    if (player == "p1") p1wins++;
+    if (player == "p2") p2wins++;
+}
+
 const isFull = () => {
     const squares = grid.children;
     for (const square of squares) {
@@ -67,6 +74,7 @@ const squareClick = (event) => {
             //do winnning stuff
             noWinner = false;
             changeDisplay(`${currentPlayer}win`);
+            givePoint(currentPlayer);
         } else {
             //check if full
             if (isFull()) {
