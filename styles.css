@@ -40,11 +40,44 @@ body {
 header {
     text-align: center;
     padding: 2em;
-    background-color: #111111;
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(34,34,34,255) 40%, rgba(34,34,34,255) 60%, rgba(0,0,0,0) 100%);
+    border: none;
 }
 
 h1 {
     font-size: var(--text-size);
+}
+
+main {
+    text-align: center;
+}
+
+#play-space{
+    font-size: 2em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#play-space section {
+    background-color: black;
+    padding: var(--spacing);
+    margin: calc(var(--spacing) / 2);
+}
+
+#p1--side {
+    text-shadow: 0px 0px 15px var(--p1-color);
+}
+
+#p1--score {
+    font-size: 3em;
+}
+
+#p2--side {
+    text-shadow: 0px 0px 15px var(--p2-color);
+}
+
+#p2--score {
+    font-size: 3em;
 }
 
 
@@ -189,5 +222,6 @@ aside, .p2win::after {
     color: white;
     font-size: var(--text-size);
     background-color: var(--square-color);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     text-shadow: 0px 0px 15px var(--other-color),0px 0px 10px var(--other-color);
 }

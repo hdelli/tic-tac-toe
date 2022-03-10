@@ -1,7 +1,11 @@
+const root = document.documentElement;
+const grid = document.querySelector("#grid");
+const p1score = document.querySelector("#p1--score");
+const p2score = document.querySelector("#p2--score");
+
 let p1wins = 0;
 let p2wins = 0;
 let currentPlayer = "p1";
-const grid = document.querySelector("#grid");
 let noWinner = true;
 
 const winningArrays = [
@@ -44,8 +48,12 @@ const checkWin = () => {
 }
 
 const givePoint = (player) => {
-    if (player == "p1") p1wins++;
-    if (player == "p2") p2wins++;
+    if (player == "p1") {
+        p1score.innerText = ++p1wins;
+    }
+    if (player == "p2") {
+        p2score.innerText = ++p2wins;
+    }
 }
 
 const isFull = () => {

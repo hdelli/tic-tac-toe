@@ -20,15 +20,46 @@
         
     </header>
     <main>
+        <aside id="turn-display" class="p1"></aside>
+        <div id="play-space">
+            <section id="p1--side">
+                <h2 id="p1--name">
+                    PLAYER 1
+                </h2>
+                <div>
+                    <h3>
+                        SCORE:
+                    </h3>
+                    <div id="p1--score">
+                        0
+                    </div>
+                </div>
 
-        <section id="game">
-            <aside id="turn-display" class="p1"></aside>
+            </section>
 
-            <!-- js will manipulate this element -->
-            <div id="grid"></div>
+            <section id="game">
 
-            <button id="reset-btn">RESET</button>
-        </section>
+                <!-- js will manipulate this element -->
+                <div id="grid"></div>
+
+                <button id="reset-btn">RESET</button>
+            </section>
+
+            <section id="p2--side">
+                <h2 id="p2--name">
+                    PLAYER 2
+                </h2>
+                <div>
+                    <h3>
+                        SCORE:
+                    </h3>
+                    <div id="p2--score">
+                        0
+                    </div>
+                </div>
+
+            </section>
+        </div>
 
     </main>
 </body>
