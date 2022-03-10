@@ -30,7 +30,7 @@
 }
 
 body {
-    background-color: black;
+    background-color: #111111;
     color: white;
     text-shadow: 0px 0px 15px var(--other-color);
     font-family: 'M PLUS Rounded 1c', sans-serif;
@@ -62,14 +62,15 @@ h1 {
     border-radius: var(--square-rad);
     margin: var(--spacing) auto;
     padding: 0 var(--spacing);
+    line-height: var(--square-size);
     
     /* styling */
-    text-align: center;
     background-color: var(--square-color);
     font-size: var(--mark-size);
 }
 
 aside, .p1::after {
+    display: block;
     content: var(--p1-name);
     color: white;
     text-shadow: 0px 0px 15px var(--p1-color);
@@ -77,6 +78,7 @@ aside, .p1::after {
 }
 
 aside, .p2::after {
+    display: block;
     content: var(--p2-name);
     color: white;
     text-shadow: 0px 0px 15px var(--p2-color);
@@ -84,18 +86,21 @@ aside, .p2::after {
 }
 
 aside, .draw::after {
+    display: block;
     content: "DRAW!";
     color: white;
     text-shadow: 0px 0px 15px var(--other-color);
 }
 
 aside, .p1win::after {
+    display: block;
     content: var(--p1-name) " WINS!";
     color: white;
     text-shadow: 0px 0px 15px var(--p1-color);
 }
 
 aside, .p2win::after {
+    display: block;
     content: var(--p2-name) " WINS!";
     color: white;
     text-shadow: 0px 0px 15px var(--p2-color);
