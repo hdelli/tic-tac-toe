@@ -14,7 +14,7 @@
 
     /* calculated values */
     --grid-size: calc((var(--square-size) + var(--spacing)) * 3);
-    --display-size: calc((var(--square-size) * 3) + (var(--spacing) * 2));
+    --display-size: calc(var(--square-size) * 3);
     --mark-margin: calc((var(--square-size) - var(--mark-size)) / 2);
     --grid-rad: calc(var(--spacing) + var(--square-rad));
 
@@ -155,4 +155,17 @@ aside, .p2win::after {
     
     /* style */
     color: var(--p2-color);
+}
+
+#reset-btn {
+    /* from vars */
+    display: block;
+    border-radius: var(--square-rad);
+    margin: var(--spacing) auto;
+    padding: 0 var(--spacing);
+    
+    /* styling */
+    color: var(--other-color);
+    font-size: calc(var(--mark-size) / 2);
+    background-color: var(--square-color);
 }
