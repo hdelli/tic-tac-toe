@@ -259,7 +259,7 @@ aside, .p2win::after {
     text-shadow: 0px 0px 15px var(--p2-color), 0px 0px 10px var(--p2-color);
 }
 
-.edit-name-btn {
+.btn {
     /* from vars */
     display: block;
     border-radius: var(--square-rad);
@@ -268,31 +268,26 @@ aside, .p2win::after {
     
     /* styling */
     color: white;
+    border: none;
     font-size: var(--text-size)/3;
-    background-color: grey;
+    background-color: #111111;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     text-shadow: 0px 0px 15px var(--other-color),0px 0px 10px var(--other-color);
 }
 
-.edit-name-btn:hover {
-    background-color: rgb(201, 199, 199);
+.btn:hover {
+    filter: brightness(120%);
+    transform: translateY(-3px);
+}
+
+.btn:active {
+    transform: translateY(0px);
 }
 
 #reset-btn {
-    /* from vars */
-    display: block;
-    border-radius: var(--square-rad);
     margin: 70px auto;
-    padding: 0 var(--spacing);
     
     /* styling */
-    color: white;
     font-size: var(--text-size);
-    background-color: rgb(126, 5, 5);
-    font-family: 'M PLUS Rounded 1c', sans-serif;
-    text-shadow: 0px 0px 15px var(--other-color),0px 0px 10px var(--other-color);
-}
-
-#reset-btn:hover {
-    background-color: rgb(185, 8, 8);
+    background-color: rgb(80, 3, 3);
 }
