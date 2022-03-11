@@ -54,42 +54,31 @@ const winningArrays = [
     [6,4,2]
 ];
 
-const changeDisplay = (player) => {
+const changeDisplay = (addClass) => {
     const display = document.querySelector("#turn-display");
     display.className = "";
-    display.classList.add(player);
+    display.classList.add(addClass);
 }
 
-const checkWin = () => {
+const checkWin = (player) => {
     const squares = grid.children;
-    const playerSquareArray = [];
+    const markPosition = [];
     for (const square of squares) {
-        playerSquareArray.push(square.className)
+        if (square.className == player) {
+            markPosition.push(1);
+        } else {
+            markPosition.push(0);
+        }
     }
-
-    for (winningArray of winningArrays) {
-        const position1 = playerSquareArray[winningArray[0]];
-        const position2 = playerSquareArray[winningArray[1]];
-        const position3 = playerSquareArray[winningArray[2]];
-        if (position1==position2 && position1==position3 && position1!=""){
-            for (const square of squares) {
-                if (square.getAttribute("id") == winningArray[0]){
-                    square.style.backgroundColor = "grey";
-                }else if (square.getAttribute("id") == winningArray[1]){
-                    square.style.backgroundColor = "grey";
-                }else if (square.getAttribute("id") == winningArray[2]){
-                    square.style.backgroundColor = "grey";
-                }
+    for (w of winningArrays) {
+        if (markPosition[w[0]] && markPosition[w[1]] && markPosition[w[2]]) {
+            for (let i = 0; i < 3; i++) {
+                squares[w[i]].classList.add("square--win");
             }
-            // get squares in those positions and change background colour
             return true;
         }
     }
     return false;
-
-    // go through each of the winning arrays
-    // check if those particular positions in the playerSquareArray are all equal to eachother
-
 }
 
 const givePoint = (player) => {
@@ -123,7 +112,7 @@ const squareClick = (event) => {
         // add mark depending on player
         square.classList.add(currentPlayer);
         //check current player win
-        if (checkWin()) {
+        if (checkWin(currentPlayer)) {
             //do winnning stuff
             noWinner = false;
             changeDisplay(`${currentPlayer}win`);
@@ -156,7 +145,6 @@ const init = () => {
     //init fresh grid
     for (let i = 0; i < 9; i++) {
         const square = document.createElement("div");
-        square.setAttribute("id",i);
         square.addEventListener("click", squareClick);
         grid.appendChild(square);
     }

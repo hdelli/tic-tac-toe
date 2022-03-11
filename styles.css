@@ -6,6 +6,7 @@
     --spacing: 30px;
     
     --square-color: black;
+    --square-win: grey;
     --p1-color: #00FF00;    
     --p2-color: #FF0099;
     --other-color: #00FFFF;
@@ -67,7 +68,7 @@ main {
 
 #p1--side {
     text-shadow: 0px 0px 15px var(--p1-color);
-    width: 200px;
+    width: 220px;
 }
 
 #p1--score {
@@ -76,7 +77,7 @@ main {
 
 #p2--side {
     text-shadow: 0px 0px 15px var(--p2-color);
-    width: 200px;
+    width: 220px;
 }
 
 #p2--score {
@@ -219,6 +220,10 @@ aside, .p2win::after {
     background-color: var(--square-color);
     box-shadow: 0px 0px 15px 5px var(--other-color);
     
+}
+
+#grid .square--win {
+    background-color: var(--square-win);
 }
 
 #grid .p1::after {
