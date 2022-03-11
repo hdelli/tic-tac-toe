@@ -21,8 +21,8 @@ function editOrSaveP1(){
         edit_p1_button.innerText = "Save";
         p1_name.style.backgroundColor = "#333333";
     } else {
-        // root.style.setProperty("--p1-name", p1_name.innerText); 
         p1_name.contentEditable = false;
+        root.style.setProperty('--p1-name', '"' + p1_name.innerText + '"');
         edit_p1_button.innerText = "Edit Name";
         p1_name.style.backgroundColor = "black";
     }
@@ -36,6 +36,7 @@ function editOrSaveP2(){
         p2_name.style.backgroundColor = "#333333";
     } else {
         p2_name.contentEditable = false;
+        root.style.setProperty('--p2-name', '"' + p2_name.innerText + '"');
         edit_p2_button.innerText = "Edit Name";
         p2_name.style.backgroundColor = "black";
     }
