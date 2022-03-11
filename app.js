@@ -74,11 +74,9 @@ const checkWin = () => {
             for (const square of squares) {
                 if (square.getAttribute("id") == winningArray[0]){
                     square.style.backgroundColor = "grey";
-                }
-                if (square.getAttribute("id") == winningArray[1]){
+                }else if (square.getAttribute("id") == winningArray[1]){
                     square.style.backgroundColor = "grey";
-                }
-                if (square.getAttribute("id") == winningArray[2]){
+                }else if (square.getAttribute("id") == winningArray[2]){
                     square.style.backgroundColor = "grey";
                 }
             }
