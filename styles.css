@@ -144,16 +144,15 @@ aside, .p1win::after {
 @keyframes flicker1 {
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
         text-shadow:
-        0 0 4px #fff,
-        0 0 11px #fff,
-        0 0 19px #fff,
-        0 0 40px #00FF00,
-        0 0 80px #00FF00,
-        0 0 90px #00FF00,
-        0 0 100px #00FF00,
-        0 0 150px #00FF00;
+        0 0 4px white,
+        0 0 11px white,
+        0 0 19px white,
+        0 0 40px var(--p1-color),
+        0 0 80px var(--p1-color),
+        0 0 90px var(--p1-color),
+        0 0 100px var(--p1-color),
+        0 0 150px var(--p1-color);
     }
-    
     20%, 24%, 55% {        
         text-shadow: none;
     }    
@@ -174,14 +173,14 @@ aside, .p2win::after {
 @keyframes flicker2 {
     0%, 18%, 22%, 25%, 53%, 57%, 100% {
         text-shadow:
-        0 0 4px #fff,
-        0 0 11px #fff,
-        0 0 19px #fff,
-        0 0 40px #FF0099,
-        0 0 80px #FF0099,
-        0 0 90px #FF0099,
-        0 0 100px #FF0099,
-        0 0 150px #FF0099;
+        0 0 4px white,
+        0 0 11px white,
+        0 0 19px white,
+        0 0 40px var(--p2-color),
+        0 0 80px var(--p2-color),
+        0 0 90px var(--p2-color),
+        0 0 100px var(--p2-color),
+        0 0 150px var(--p2-color);
     }
     20%, 24%, 55% {        
         text-shadow: none;
